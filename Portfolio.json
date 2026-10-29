@@ -1,0 +1,17 @@
+[
+  {
+    "code": "TCS.NS",
+    "qty": 100,
+    "buy_price": 2300.0
+  },
+  {
+    "code": "RELIANCE.NS",
+    "qty": 122,
+    "buy_price": 3000.0
+  },
+  {
+    "code": "ETERNAL.NS",
+    "qty": 200,
+    "buy_price": 256.0
+  }
+]
