@@ -1,56 +1,52 @@
-# Python-Portfolio-Tracker-Arnav-Agrawal
-Python based investment portfolio tracker
 # Stock Portfolio Manager
 
-A command-line stock portfolio tracker built with Python. It stores your stock holdings locally in JSON format, fetches real-time market prices using Yahoo Finance (`yfinance`), calculates profit/loss across your positions, and visualizes portfolio allocation with `matplotlib`.
+A simple command-line portfolio tracker I built in Python. You enter the stocks you own, and it saves them in a JSON file, pulls current prices from Yahoo Finance using `yfinance`, shows your profit/loss, and plots a pie chart of how your portfolio is split.
 
-## Features
+I made this to practice working with APIs, file handling and data visualization in Python.
 
-- **Add Holdings**: Record stock ticker symbols (e.g., `TCS.NS`, `RELIANCE.NS`, `AAPL`), quantity, and buying price.
-- **List Holdings**: View all saved stock positions stored in `Portfolio.json`.
-- **Live Profit/Loss Summary**: Fetch the latest closing price via Yahoo Finance to compute per-stock and overall Profit/Loss (P/L).
-- **Portfolio Allocation Chart**: Generate a pie chart showing the percentage breakdown of your portfolio by current market value.
+## What it does
 
-## Tech Stack & Dependencies
+- **Add holdings**: enter a ticker (like `TCS.NS`, `RELIANCE.NS` or `AAPL`), the quantity, and your buying price
+- **List holdings**: shows everything saved in `Portfolio.json`
+- **Summary**: fetches the latest closing price and shows the P/L for each stock and overall
+- **Allocation chart**: pie chart of your portfolio based on current market value
 
-- **Python 3.10+** (uses `match-case` structural pattern matching)
-- [yfinance](https://pypi.org/project/yfinance/) — For fetching live market data from Yahoo Finance
-- [matplotlib](https://pypi.org/project/matplotlib/) — For plotting the portfolio allocation pie chart
+## Requirements
 
-## Getting Started
+- Python 3.10 or above (I used `match-case`, which isn't available in older versions)
+- [yfinance](https://pypi.org/project/yfinance/)
+- [matplotlib](https://pypi.org/project/matplotlib/)
 
-### 1. Clone the repository
+## How to run
 
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-```
+1. Clone the repo
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
+   ```
 
-### 2. Create a virtual environment (optional but recommended)
+2. (Optional) Make a virtual environment
+   ```bash
+   python -m venv .venv
+   # Windows:
+   .venv\Scripts\activate
+   # macOS/Linux:
+   source .venv/bin/activate
+   ```
 
-```bash
-python -m venv .venv
-# On Windows:
-.venv\Scripts\activate
-# On macOS/Linux:
-source .venv/bin/activate
-```
+3. Install the libraries
+   ```bash
+   pip install yfinance matplotlib
+   ```
 
-### 3. Install dependencies
+4. Run it
+   ```bash
+   python portfolio.py
+   ```
 
-```bash
-pip install yfinance matplotlib
-```
+## Using it
 
-### 4. Run the application
-
-```bash
-python portfolio.py
-```
-
-## Usage
-
-When you run `portfolio.py`, an interactive menu appears:
+Once it runs, you get this menu:
 
 ```text
 Portfolio Manager
@@ -64,12 +60,20 @@ Portfolio Manager
 Enter your choice:
 ```
 
-- **Note on Ticker Symbols**: Use standard Yahoo Finance ticker symbols. For Indian NSE stocks, append `.NS` (e.g., `TCS.NS`, `RELIANCE.NS`). For BSE stocks, append `.BO`.
+Just type the number of the option you want.
 
-## Project Structure
+**About ticker symbols:** use the same symbols as Yahoo Finance. For NSE stocks add `.NS` at the end (e.g. `TCS.NS`), and for BSE stocks add `.BO`. US stocks like `AAPL` work without anything extra.
+
+## Files
 
 ```text
-├── portfolio.py     # Main CLI application and portfolio logic
-├── Portfolio.json   # Local JSON storage for stock holdings
-└── README.md        # Project documentation
+├── portfolio.py     # main program
+├── Portfolio.json   # where your holdings get saved
+└── README.md
 ```
+
+## Notes
+
+- You need an internet connection for the summary and chart, since prices come from Yahoo Finance.
+- The price used is the latest closing price, not a live tick-by-tick price.
+- This is a learning project, not financial advice.
